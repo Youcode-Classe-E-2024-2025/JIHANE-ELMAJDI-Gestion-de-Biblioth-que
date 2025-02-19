@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,16 +17,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
 Route::get('/register', function () {
-    return view('register'); // Crée une vue register.blade.php
-});
+    return view('register');
+})->name('register');
 
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/login', function () {
-    return view('login'); // Crée une vue login.blade.php
-});
+    return view('login');
+})->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/home', function () {
+    return view('home'); // Page après connexion
+})->name('home');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
