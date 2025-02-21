@@ -24,5 +24,8 @@
         <h2 class="text-3xl font-bold text-pink-600">Bienvenue, {{ auth()->user()->name }} !</h2>
         <p class="text-gray-600 mt-2">Profitez de la bibliothèque MaktabatCandy 📚</p>
     </div>
+   
+   
+
 </body>
 </html>
