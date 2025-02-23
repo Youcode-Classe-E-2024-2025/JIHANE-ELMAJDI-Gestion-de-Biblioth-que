@@ -13,6 +13,8 @@
             <a href="{{ route('profile') }}" class="relative w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
                 <span class="text-pink-500 font-bold">{{ substr(auth()->user()->name, 0, 1) }}</span>
             </a>
+            <a href="{{ route('books.index') }}" class="bg-white text-pink-500 px-4 py-2 rounded-lg shadow-md hover:bg-pink-200 transition">Livres</a>
+            <a href="{{ route('borrowings.index', auth()->user()->id) }}" class="bg-white text-pink-500 px-4 py-2 rounded-lg shadow-md hover:bg-pink-200 transition">Emprunts</a>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="bg-white text-pink-500 px-4 py-2 rounded-lg shadow-md hover:bg-pink-200 transition">Déconnexion</button>
