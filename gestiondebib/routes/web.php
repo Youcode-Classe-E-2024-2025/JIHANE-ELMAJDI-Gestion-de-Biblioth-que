@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 
 Route::get('/', [AuthController::class, 'showDashboard'])->name('dashboard');
@@ -13,7 +14,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/home', [AuthController::class, 'showHome'])->middleware('auth')->name('home');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-use App\Http\Controllers\ProfileController;
+
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
 
 
 Route::get('/profil', [ProfileController::class, 'show'])->name('profile');
